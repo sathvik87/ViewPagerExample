@@ -1,5 +1,5 @@
-Project dependancy:
-1. Compatability package v4.
+Project dependency:
+1. Compatibility package v4.
 	This(jar) file has to be added to libs folder and added to build path of the project.
 2. View Pager Indicator.
 	This is a library for showing the tabs for ViewPager (This is a library project which has to added to current project path).

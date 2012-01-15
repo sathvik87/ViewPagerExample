@@ -15,7 +15,7 @@ public class ImageAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		
-		return 9;
+		return 9;  // Random count, just for an example.
 	}
 
 	@Override

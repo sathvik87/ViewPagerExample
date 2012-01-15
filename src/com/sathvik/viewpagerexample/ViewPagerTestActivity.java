@@ -18,8 +18,6 @@ public class ViewPagerTestActivity extends Activity {
         awesomePager = (ViewPager) findViewById(R.id.viewpager);
         awesomePager.setAdapter(new ViewPagerAdapter(this));
         
-      //Bind the title indicator to the adapter
-        //TitlePageIndicator titleIndicator = (TitlePageIndicator)findViewById(R.id.titles);
         TabPageIndicator tabIndicator = (TabPageIndicator) findViewById(R.id.titles);
         tabIndicator.setViewPager(awesomePager);
     }

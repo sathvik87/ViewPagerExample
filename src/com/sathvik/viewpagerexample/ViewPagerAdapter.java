@@ -15,7 +15,7 @@ public class ViewPagerAdapter extends PagerAdapter  implements TitleProvider {
 	
     private Context cxt;
     private LayoutInflater inflater; 
-    private GridView grid;
+    
     ViewPagerAdapter(Context context) {
     	cxt = context;
     	inflater = (LayoutInflater) cxt.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -38,26 +38,11 @@ public class ViewPagerAdapter extends PagerAdapter  implements TitleProvider {
  */
     @Override
     public Object instantiateItem(View collection, int position) {
-            /*TextView tv = new TextView(cxt);
-            tv.setText("Bonjour PAUG " + position);
-            tv.setTextColor(Color.WHITE);
-            tv.setTextSize(30);
-            Log.v("ABC","Adding view ****"); 
-            ((ViewPager) collection).addView(tv,0);
-            return tv;*/
-    	//inflater = ((Activity) cxt).getLayoutInflater();
-    		
-	    		GridView v = (GridView) inflater.inflate(R.layout.grid, null); 
-	    		//GridView gridview = (GridView)v.findViewById(R.id.gridview);
-	    		v.setAdapter(new ImageAdapter(cxt));
-	    		
-	    		Log.v("ABC","Adding view ****");
-	    		((ViewPager) collection).addView(v,0);  
-	    		 
-	            return v; 
-    		
-            
-            
+    	GridView v = (GridView) inflater.inflate(R.layout.grid, null); 
+	    v.setAdapter(new ImageAdapter(cxt));
+	    ((ViewPager) collection).addView(v,0);  
+	    
+	    return v;     
     }
 
 /**
@@ -71,11 +56,8 @@ public class ViewPagerAdapter extends PagerAdapter  implements TitleProvider {
  * {@link #instantiateItem(View, int)}.
  */
     @Override
-    public void destroyItem(View collection, int position, Object view) {
-    	Log.v("ABC","Removing view ****"); 
+    public void destroyItem(View collection, int position, Object view) { 
             ((ViewPager) collection).removeView((GridView) view);
-    	
-    	// ((ViewPager) collection).removeView((TextView) view);
     }
 
     
@@ -83,8 +65,6 @@ public class ViewPagerAdapter extends PagerAdapter  implements TitleProvider {
     @Override
     public boolean isViewFromObject(View view, Object object) {
            return view==((GridView)object);
-    	
-    	//return view==((TextView)object);
     }
 
     
